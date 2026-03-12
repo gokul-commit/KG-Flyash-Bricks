@@ -1,0 +1,368 @@
+{
+  "company": {
+    "name": "KG Flyash Bricks",
+    "desc": "Premium eco-friendly flyash bricks manufacturer since 2017. Committed to sustainable building solutions.",
+    "address": "Kangeyam, Tiruppur, Tamil Nadu, 698701, India",
+    "phone": "+91-900372221",
+    "email": "kgflyash@gmail.com",
+    "hours": "Mon–Sat 8:00 AM – 6:00 PM",
+    "website": "www.kgflyash.com",
+    "heroImage": "/uploads/1771350618847_heroImage.png",
+    "whyChooseUsBackground": "/uploads/1771091115995_whyChooseUsBackground.png",
+    "ecoFriendlyIcon": "/uploads/1771090243296_ecoFriendlyIcon.png",
+    "strengthIcon": "/uploads/1771090243299_strengthIcon.png",
+    "energyIcon": "/uploads/1771090243303_energyIcon.png",
+    "deliveryIcon": "/uploads/1771090243306_deliveryIcon.png",
+    "teamMember1Image": "/uploads/1771089014245_teamMember1Image.png",
+    "teamMember2Image": "/uploads/1771350422176_teamMember2Image.png",
+    "teamMember3Image": "/uploads/1771089014252_teamMember3Image.png",
+    "teamMember4Image": "/uploads/1771089014255_teamMember4Image.png",
+    "lat": 11.002568061692422,
+    "lng": 77.56091403132775
+  },
+  "products": [
+    {
+      "id": "p1",
+      "name": "Solid Flyash Brick - 9 inch",
+      "price": 5.5,
+      "stock": 1200,
+      "desc": "High strength, eco-friendly solid brick",
+      "category": "Bricks",
+      "image": "/uploads/1769878643078_Screenshot_2026-01-31_222658.png",
+      "features": [
+        "High compressive strength",
+        "Eco-friendly",
+        "Light weight",
+        "Cost effective"
+      ],
+      "status": "published",
+      "description": "High strength, eco-friendly solid brick",
+      "seoMetadata": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "updatedAt": "2026-01-31T16:57:46.846Z"
+    },
+    {
+      "id": "p3",
+      "name": "Paver Block - 60mm",
+      "price": 12,
+      "stock": 200,
+      "desc": "Perfect for driveways and outdoor areas",
+      "category": "Pavers",
+      "image": "/uploads/1769878935843_Screenshot_2026-01-31_223158.png",
+      "features": [
+        "Durable",
+        "Weather resistant",
+        "Easy installation",
+        "Non-slip surface"
+      ],
+      "status": "published",
+      "description": "Perfect for driveways and outdoor areas",
+      "seoMetadata": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "updatedAt": "2026-01-31T17:03:35.971Z"
+    },
+    {
+      "id": "p4",
+      "name": "Interlocking Brick",
+      "price": 8.5,
+      "stock": 500,
+      "desc": "Premium interlocking design for walls",
+      "category": "Bricks",
+      "image": "/uploads/1769879003521_Screenshot_2026-01-31_223312.png",
+      "features": [
+        "Interlocking design",
+        "Premium quality",
+        "Easy alignment",
+        "Structural strength"
+      ],
+      "status": "published",
+      "description": "Premium interlocking design for walls",
+      "seoMetadata": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "updatedAt": "2026-01-31T17:03:28.972Z"
+    },
+    {
+      "id": "p6",
+      "name": "Concrete ring",
+      "price": 9.99,
+      "stock": 150,
+      "desc": "Provides a rigid,, safe liner for groundwater wells, protecting against wall collapse..,",
+      "category": "Decorative",
+      "image": "/uploads/1771350704232_Screenshot_2026-01-31_222844.png",
+      "features": [
+        "Modern design",
+        "Aesthetic appeal",
+        "Premium finish",
+        "Customizable colors"
+      ],
+      "status": "published",
+      "description": "Provides a rigid,, safe liner for groundwater wells, protecting against wall collapse..,",
+      "seoMetadata": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "updatedAt": "2026-02-17T17:51:46.878Z"
+    }
+  ],
+  "news": [
+    {
+      "id": "n1",
+      "title": "KG Flyash expands capacity",
+      "content": "We are excited to announce our capacity expansion with new state-of-the-art machinery. This will help us serve more customers efficiently.",
+      "createdAt": "2025-10-15T10:30:00Z",
+      "status": "published"
+    },
+    {
+      "id": "n2",
+      "title": "New ISO 9001:2015 certification awarded",
+      "content": "ISO 9001:2015 certification validates our commitment to quality and continuous improvement in manufacturing.",
+      "createdAt": "2025-11-20T14:15:00Z",
+      "status": "published",
+      "seoMetadata": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "updatedAt": "2026-01-31T17:04:48.286Z"
+    },
+    {
+      "id": "n3",
+      "title": "GST  Record",
+      "content": "GST Number\t33AEZPV9679M1ZW \nBusiness Name\tK.G. FLY ASH BRICKS\nPAN Number\tAEZPV9679M",
+      "createdAt": "2026-01-10T09:00:00Z",
+      "status": "published",
+      "seoMetadata": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "updatedAt": "2026-01-31T17:11:26.665Z"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "c1",
+      "title": "MSME Certificate",
+      "file": "msme.pdf",
+      "issuedDate": "2023-01-15",
+      "status": "published",
+      "name": "GST  Record",
+      "description": "gst",
+      "image": "",
+      "seoMetadata": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "updatedAt": "2026-01-31T17:15:57.286Z"
+    },
+    {
+      "id": "c2",
+      "title": "ISO 9001:2015",
+      "file": "iso9001.pdf",
+      "issuedDate": "2024-06-10",
+      "status": "published"
+    },
+    {
+      "id": "c3",
+      "title": "Environmental Compliance Certificate",
+      "file": "eco-cert.pdf",
+      "issuedDate": "2024-03-20",
+      "status": "published"
+    },
+    {
+      "id": "ZmaGRJ4cG5W2KcKgBmicw",
+      "name": "gvf",
+      "description": "rg",
+      "image": "",
+      "status": "published",
+      "seoMetadata": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "createdAt": "2026-02-06T18:12:19.753Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "admin",
+      "username": "admin",
+      "password": "admin",
+      "role": "admin",
+      "name": "KG Admin",
+      "email": "admin@kgflyash.com"
+    },
+    {
+      "id": "admin1",
+      "username": "admin1",
+      "password": "admin1",
+      "role": "manager",
+      "name": "KG Admin",
+      "email": "admin@kgflyash.com"
+    },
+    {
+      "id": "gokul",
+      "username": "gokul",
+      "password": "gokul@1234",
+      "role": "admin",
+      "name": "KG Admin",
+      "email": "admin@kgflyash.com",
+      "updatedAt": "2026-03-12T17:07:46.238Z"
+    },
+    {
+      "id": "sathish",
+      "username": "sathish kumar",
+      "password": "sathish kumar@123",
+      "role": "admin",
+      "name": "KG Admin",
+      "email": "admin@kgflyash.com"
+    },
+    {
+      "id": "manager",
+      "username": "manager",
+      "password": "manager123",
+      "role": "manager",
+      "name": "KG Manager",
+      "email": "manager@kgflyash.com"
+    },
+    {
+      "id": "supervisor",
+      "username": "supervisor",
+      "password": "supervisor123",
+      "role": "supervisor",
+      "name": "KG Supervisor",
+      "email": "supervisor@kgflyash.com"
+    },
+    {
+      "id": "jegan",
+      "username": "jegan",
+      "password": "jegan@123",
+      "role": "manager",
+      "name": "KG Manager",
+      "email": "manager@kgflyash.com"
+    }
+  ],
+  "publicUsers": [
+    {
+      "id": "ENNySmGCCP7lKDlbrC5cI",
+      "name": "F",
+      "email": "",
+      "mobile": "99999999999999999",
+      "otp": 100886,
+      "otpMethod": "sms",
+      "createdAt": "2026-01-28T17:53:22.655Z"
+    },
+    {
+      "id": "jmIbk7ZmTh0lz2EQ6wiK9",
+      "name": "GB",
+      "email": "",
+      "mobile": "34454",
+      "otp": 994799,
+      "otpMethod": "sms",
+      "createdAt": "2026-01-28T17:55:33.760Z"
+    },
+    {
+      "id": "ajz2YR9BITXFk4GZiYfOK",
+      "name": "GOKUL S",
+      "email": "24z144@psgitech.ac.in",
+      "mobile": "90000000000000000000000000000",
+      "otp": 921233,
+      "otpMethod": "sms",
+      "createdAt": "2026-02-06T17:39:51.418Z"
+    }
+  ],
+  "reviews": [],
+  "pageContents": [
+    {
+      "pageId": "company",
+      "status": "published",
+      "data": {
+        "name": "KG Flyash Bricks",
+        "desc": "Premium eco-friendly flyash bricks manufacturer since 2008.",
+        "address": "Kangeyam, Tiruppur, Tamil Nadu, 698701, India",
+        "phone": "+91-9600372221",
+        "email": "sales@kgflyash.com",
+        "hours": "Mon–Sat 8:00 AM – 6:00 PM",
+        "website": "www.kgflyash.com",
+        "lat": 11.002568061692422,
+        "lng": 77.56091403132775
+      },
+      "seo": {
+        "title": "KG Flyash Bricks - Eco-Friendly Building Materials",
+        "description": "Premium flyash bricks manufacturer in Tiruppur",
+        "keywords": "flyash bricks, eco-friendly, Tiruppur"
+      },
+      "editedAt": "2026-03-06T16:27:51.336Z",
+      "publishedAt": "2025-01-21T00:00:00Z",
+      "editedBy": "admin1"
+    }
+  ],
+  "employees": [],
+  "enquiries": [],
+  "orders": [
+    {
+      "id": "model",
+      "userId": null,
+      "customerName": "model",
+      "customerEmail": "model@gmail.com",
+      "customerPhone": "000-000-000-0",
+      "address": "dfm",
+      "city": "m",
+      "state": "m",
+      "pincode": "000000",
+      "items": [
+        {
+          "productId": "p1",
+          "productName": "Solid Flyash Brick - 9 inch",
+          "price": 5.5,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 5.5,
+      "notes": "",
+      "status": "delivered",
+      "createdAt": "2026-03-12T15:35:04.902Z",
+      "statusUpdatedAt": "2026-03-12T17:20:51.469Z",
+      "statusUpdatedBy": "admin",
+      "statusHistory": [
+        {
+          "from": "delivered",
+          "to": "delivered",
+          "changedAt": "2026-03-12T17:20:51.469Z",
+          "changedBy": "admin",
+          "notes": ""
+        }
+      ]
+    }
+  ],
+  "attendance": [],
+  "leaves": [],
+  "salaries": [],
+  "deliveries": [],
+  "notifications": [],
+  "logistics_drivers": [
+    {
+      "id": "QyB3rJMucVXDe8e-QlisT",
+      "name": "test",
+      "phone": "1223456789",
+      "vehicle_no": "tn-42-kk-5555",
+      "username": "driver",
+      "password": "driver",
+      "image": "",
+      "status": "active",
+      "createdAt": "2026-02-25T14:11:24.166Z"
+    }
+  ],
+  "logistics_orders": []
+}
