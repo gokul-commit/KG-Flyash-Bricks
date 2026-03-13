@@ -17,9 +17,14 @@ const getApiUrl = () => {
 };
 
 // Build base URL dynamically to work on mobile networks
+// When running in production (on Vercel), point to the deployed backend.
+// When running locally, use localhost.
 export const getBaseUrl = () => {
-  // Temporarily hardcoded for debugging
-  return 'http://localhost:4000';
+  const hostname = window.location.hostname;
+  if (hostname === 'localhost') {
+    return 'http://localhost:4000';
+  }
+  return 'https://kg-flyash-bricks.onrender.com';
 };
 
 const api = axios.create({
