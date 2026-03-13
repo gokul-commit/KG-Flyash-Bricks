@@ -8,7 +8,12 @@ const getApiUrl = () => {
   const protocol = window.location.protocol; // http: or https:
   const hostname = window.location.hostname; // could be 192.168.x.x on mobile
   const port = 4000; // change if your API runs on another port
-  return `${protocol}//${hostname}:${port}/api`;
+  if (hostname === 'localhost') {
+    return `${protocol}//${hostname}:${port}/api`;
+  } else {
+    // Production backend URL
+    return 'https://kg-flyash-bricks.onrender.com/api';
+  }
 };
 
 // Build base URL dynamically to work on mobile networks
