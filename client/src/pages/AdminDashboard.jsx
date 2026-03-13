@@ -194,12 +194,29 @@ function AdminDashboard({ user, onLogout, setPageEditorMode, logisticsMode, setL
     try {
       const compData = await getCompany();
       const companyInfo = compData.data || {};
-      setCompany(companyInfo);
+      const base = getBaseUrl();
+
+      // Normalize stored image URLs so they work in production (avoid localhost loopback)
+      const normalizedCompany = {
+        ...companyInfo,
+        heroImage: normalizeImageUrl(companyInfo.heroImage, base),
+        whyChooseUsBackground: normalizeImageUrl(companyInfo.whyChooseUsBackground, base),
+        ecoFriendlyIcon: normalizeImageUrl(companyInfo.ecoFriendlyIcon, base),
+        strengthIcon: normalizeImageUrl(companyInfo.strengthIcon, base),
+        energyIcon: normalizeImageUrl(companyInfo.energyIcon, base),
+        deliveryIcon: normalizeImageUrl(companyInfo.deliveryIcon, base),
+        teamMember1Image: normalizeImageUrl(companyInfo.teamMember1Image, base),
+        teamMember2Image: normalizeImageUrl(companyInfo.teamMember2Image, base),
+        teamMember3Image: normalizeImageUrl(companyInfo.teamMember3Image, base),
+        teamMember4Image: normalizeImageUrl(companyInfo.teamMember4Image, base)
+      };
+
+      setCompany(normalizedCompany);
       // location may be stored directly or in lat/lng fields
       setCompanyLocation({
-        address: companyInfo.address || companyInfo.location?.address || '',
-        lat: companyInfo.lat || companyInfo.location?.lat || null,
-        lng: companyInfo.lng || companyInfo.location?.lng || null
+        address: normalizedCompany.address || normalizedCompany.location?.address || '',
+        lat: normalizedCompany.lat || normalizedCompany.location?.lat || null,
+        lng: normalizedCompany.lng || normalizedCompany.location?.lng || null
       });
     } catch (e) {
       console.error('Error loading company data:', e);
@@ -1688,7 +1705,7 @@ function AdminDashboard({ user, onLogout, setPageEditorMode, logisticsMode, setL
                     {company?.heroImage && (
                       <div style={{ marginBottom: '20px' }}>
                         <p style={{ margin: '0 0 8px 0', color: '#2c3e50', fontWeight: 'bold', fontSize: '12px' }}>📸 Currently Saved:</p>
-                        <img src={company.heroImage.startsWith('http') ? company.heroImage : `${getBaseUrl()}${company.heroImage}`} alt="Current Hero" style={{ maxWidth: '100%', height: '150px', objectFit: 'cover', borderRadius: '4px', border: '2px solid #27ae60' }} />
+                        <img src={company.heroImage} alt="Current Hero" style={{ maxWidth: '100%', height: '150px', objectFit: 'cover', borderRadius: '4px', border: '2px solid #27ae60' }} />
                       </div>
                     )}
                     
@@ -1737,7 +1754,7 @@ function AdminDashboard({ user, onLogout, setPageEditorMode, logisticsMode, setL
                     {company?.whyChooseUsBackground && (
                       <div style={{ marginBottom: '20px' }}>
                         <p style={{ margin: '0 0 8px 0', color: '#2c3e50', fontWeight: 'bold', fontSize: '12px' }}>📸 Currently Saved:</p>
-                        <img src={company.whyChooseUsBackground.startsWith('http') ? company.whyChooseUsBackground : `${getBaseUrl()}${company.whyChooseUsBackground}`} alt="Why Choose Us Background" style={{ maxWidth: '100%', height: '150px', objectFit: 'cover', borderRadius: '4px', border: '2px solid #27ae60' }} />
+                        <img src={company.whyChooseUsBackground} alt="Why Choose Us Background" style={{ maxWidth: '100%', height: '150px', objectFit: 'cover', borderRadius: '4px', border: '2px solid #27ae60' }} />
                       </div>
                     )}
                     
@@ -1795,7 +1812,7 @@ function AdminDashboard({ user, onLogout, setPageEditorMode, logisticsMode, setL
                           {company?.[item.key] && (
                             <div style={{ marginBottom: '10px', textAlign: 'center', padding: '10px', background: '#f0f9ff', borderRadius: '4px', border: '1px solid #27ae60' }}>
                               <p style={{ margin: '0 0 8px 0', fontSize: '11px', color: '#2c3e50', fontWeight: 'bold' }}>📸 Current:</p>
-                              <img src={company[item.key].startsWith('http') ? company[item.key] : `${getBaseUrl()}${company[item.key]}`} alt={item.label} style={{ maxHeight: '70px', maxWidth: '100%', objectFit: 'contain' }} />
+                              <img src={company[item.key]} alt={item.label} style={{ maxHeight: '70px', maxWidth: '100%', objectFit: 'contain' }} />
                             </div>
                           )}
                           
@@ -1860,7 +1877,7 @@ function AdminDashboard({ user, onLogout, setPageEditorMode, logisticsMode, setL
                           {company?.[item.key] && (
                             <div style={{ marginBottom: '10px', textAlign: 'center', padding: '10px', background: '#f0f9ff', borderRadius: '4px', border: '1px solid #27ae60' }}>
                               <p style={{ margin: '0 0 8px 0', fontSize: '11px', color: '#2c3e50', fontWeight: 'bold' }}>📸 Current:</p>
-                              <img src={company[item.key].startsWith('http') ? company[item.key] : `${getBaseUrl()}${company[item.key]}`} alt={item.label} style={{ maxHeight: '100px', maxWidth: '100%', objectFit: 'cover', borderRadius: '4px' }} />
+                              <img src={company[item.key]} alt={item.label} style={{ maxHeight: '100px', maxWidth: '100%', objectFit: 'cover', borderRadius: '4px' }} />
                             </div>
                           )}
                           

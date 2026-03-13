@@ -145,6 +145,14 @@ function DriverDashboard({ user, onLogout }) {
   });
   const [vehicles, setVehicles] = useState([]); // Available vehicles for assignment
 
+  const normalizeImageUrl = (imageUrl, base) => {
+    if (!imageUrl) return imageUrl;
+    if (imageUrl.startsWith('/')) return `${base}${imageUrl}`;
+    if (imageUrl.includes('localhost:4000')) return imageUrl.replace(/http:\/\/localhost:4000/, base);
+    if (imageUrl.startsWith('http')) return imageUrl;
+    return imageUrl;
+  };
+
   useEffect(() => {
     loadData();
   }, []);
@@ -159,8 +167,12 @@ function DriverDashboard({ user, onLogout }) {
         getDriverProfile(),
         getDriverOrders()
       ]);
-      
-      setProfile(profileData.data);
+      const base = getBaseUrl();
+      const normalizedProfile = {
+        ...profileData.data,
+        image: normalizeImageUrl(profileData.data?.image, base)
+      };
+      setProfile(normalizedProfile);
       const rawOrders = ordersData.data || [];
       // ensure each order has pickup/drop coords when possible
       const normalizedOrders = await Promise.all(rawOrders.map(async o => {
@@ -554,7 +566,7 @@ function DriverDashboard({ user, onLogout }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           {profile?.image && (
             <img 
-              src={profile.image.startsWith('http') ? profile.image : `${getBaseUrl()}${profile.image}`}
+              src={profile.image}
               alt="Driver"
               style={{ 
                 width: '50px', 
@@ -653,7 +665,7 @@ function DriverDashboard({ user, onLogout }) {
                   <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                     {profile?.image && (
                       <img 
-                        src={profile.image.startsWith('http') ? profile.image : `${getBaseUrl()}${profile.image}`}
+                        src={profile.image}
                         alt="Driver"
                         style={{ 
                           width: '120px', 

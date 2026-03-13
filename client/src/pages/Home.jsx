@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import api, { getCompany, getProducts, getNews, getCertificates, chatbotQuery, createEnquiry, createOrder } from '../api';
+import api, { getBaseUrl, getCompany, getProducts, getNews, getCertificates, chatbotQuery, createEnquiry, createOrder } from '../api';
 import logo from '../assets/logo.png';
 
 function Home({ user }) {
@@ -77,24 +77,40 @@ function Home({ user }) {
       ]);
       console.log('API calls completed:', { compData, prodsData, newsData, certsData });
       
-      // Build base URL dynamically to work on mobile networks
-      const protocol = window.location.protocol;
-      const hostname = window.location.hostname;
-      const base = `${protocol}//${hostname}:4000`;
+      // Build base URL for the backend (works in both local dev and production)
+      const base = getBaseUrl();
       
       // Normalize company data
       const normalizedComp = compData.data ? {
         ...compData.data,
-        heroImage: compData.data.heroImage ? (compData.data.heroImage.startsWith('http') ? compData.data.heroImage : `${base}${compData.data.heroImage}`) : null,
-        whyChooseUsBackground: compData.data.whyChooseUsBackground ? (compData.data.whyChooseUsBackground.startsWith('http') ? compData.data.whyChooseUsBackground : `${base}${compData.data.whyChooseUsBackground}`) : null,
-        ecoFriendlyIcon: compData.data.ecoFriendlyIcon ? (compData.data.ecoFriendlyIcon.startsWith('http') ? compData.data.ecoFriendlyIcon : `${base}${compData.data.ecoFriendlyIcon}`) : null,
-        strengthIcon: compData.data.strengthIcon ? (compData.data.strengthIcon.startsWith('http') ? compData.data.strengthIcon : `${base}${compData.data.strengthIcon}`) : null,
-        energyIcon: compData.data.energyIcon ? (compData.data.energyIcon.startsWith('http') ? compData.data.energyIcon : `${base}${compData.data.energyIcon}`) : null,
-        deliveryIcon: compData.data.deliveryIcon ? (compData.data.deliveryIcon.startsWith('http') ? compData.data.deliveryIcon : `${base}${compData.data.deliveryIcon}`) : null,
-        teamMember1Image: compData.data.teamMember1Image ? (compData.data.teamMember1Image.startsWith('http') ? compData.data.teamMember1Image : `${base}${compData.data.teamMember1Image}`) : null,
-        teamMember2Image: compData.data.teamMember2Image ? (compData.data.teamMember2Image.startsWith('http') ? compData.data.teamMember2Image : `${base}${compData.data.teamMember2Image}`) : null,
-        teamMember3Image: compData.data.teamMember3Image ? (compData.data.teamMember3Image.startsWith('http') ? compData.data.teamMember3Image : `${base}${compData.data.teamMember3Image}`) : null,
-        teamMember4Image: compData.data.teamMember4Image ? (compData.data.teamMember4Image.startsWith('http') ? compData.data.teamMember4Image : `${base}${compData.data.teamMember4Image}`) : null
+        heroImage: compData.data.heroImage ? normalizeImageUrl(compData.data.heroImage, base) : null,
+        whyChooseUsBackground: compData.data.whyChooseUsBackground
+          ? normalizeImageUrl(compData.data.whyChooseUsBackground, base)
+          : null,
+        ecoFriendlyIcon: compData.data.ecoFriendlyIcon
+          ? normalizeImageUrl(compData.data.ecoFriendlyIcon, base)
+          : null,
+        strengthIcon: compData.data.strengthIcon
+          ? normalizeImageUrl(compData.data.strengthIcon, base)
+          : null,
+        energyIcon: compData.data.energyIcon
+          ? normalizeImageUrl(compData.data.energyIcon, base)
+          : null,
+        deliveryIcon: compData.data.deliveryIcon
+          ? normalizeImageUrl(compData.data.deliveryIcon, base)
+          : null,
+        teamMember1Image: compData.data.teamMember1Image
+          ? normalizeImageUrl(compData.data.teamMember1Image, base)
+          : null,
+        teamMember2Image: compData.data.teamMember2Image
+          ? normalizeImageUrl(compData.data.teamMember2Image, base)
+          : null,
+        teamMember3Image: compData.data.teamMember3Image
+          ? normalizeImageUrl(compData.data.teamMember3Image, base)
+          : null,
+        teamMember4Image: compData.data.teamMember4Image
+          ? normalizeImageUrl(compData.data.teamMember4Image, base)
+          : null
       } : null;
       
       setCompany(normalizedComp);
